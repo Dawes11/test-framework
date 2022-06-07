@@ -3,6 +3,7 @@
     using System.ComponentModel;
     public enum Pages
     {
-        Dashboard
+        Dashboard,
+        LoginPage
     }
 }
