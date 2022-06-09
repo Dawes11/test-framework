@@ -38,6 +38,5 @@
         {
             commonPage.PageHeader(pageHeader).IsDisplayedAfterWait().Should().BeTrue();
         }
-
     }
 }

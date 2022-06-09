@@ -11,5 +11,6 @@ Background:
 Scenario: User log out paths
 	When I log out
 	Then I can see page with header 'Login Page'
+	#I cannot reach landing page without login -> two steps (action and verification)
 	When I try to get to Main page without login
-	Then I can see '' message
+	Then I can see error message with text 'You must login to view the secure area!'

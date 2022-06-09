@@ -45,5 +45,22 @@
             LandingPageIsVisible();
         }
 
+        [When(@"I try to get to Main page without login")]
+        public void TryToGetToMainPageWithoutLogin()
+        {
+            Browser.GoTo(Pages.MainPage);         
+        }
+
+        [Then(@"I can see error message with text '(.+)'")]
+        public void ErrorMessageIsShown(string errorMessage)
+        {
+            //check the error message is displayed
+            loginPage.ErrorMessage.IsDisplayedAfterWait().Should().BeTrue();
+
+            var uiErrorText = loginPage.ErrorMessage.Text();
+            //check correct error message, there is escaping and 'x' at the end -> Contains not Equals, we need to know the message specified is visible
+            uiErrorText.Should().Contain(errorMessage, $"Expected {errorMessage}, but shown {uiErrorText}.");
+        }
+
     }
 }
