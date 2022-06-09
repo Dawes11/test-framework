@@ -33,11 +33,5 @@
         {
             this.LoginButton.ClickWithWait();
         }
-
-//        public void LogOut()
-//        {
-//            this.UsernameButton.ClickWithWait();
-//            this.LogoutButton.ClickWithWait();
-//        }
     }
 }
