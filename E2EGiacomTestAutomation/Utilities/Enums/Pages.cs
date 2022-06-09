@@ -4,6 +4,7 @@
     public enum Pages
     {
         Dashboard,
-        LoginPage
+        LoginPage,
+        MainPage
     }
 }
