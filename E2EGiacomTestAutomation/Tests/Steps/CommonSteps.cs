@@ -11,14 +11,14 @@
     {
         private CommonPage commonPage = new CommonPage();
 
-        [Then(@"I can see expected page ""(.*)""")]
-        public void ThenICanSeeExpectedPage(string pageTitle)
+        [Then(@"I can see expected page '(.+)'")]
+        public void ExpectedPageIsVisible(string pageTitle)
         {
             this.commonPage.PageTitle(pageTitle).IsDisplayedAfterWait().Should().BeTrue();
         }
 
-        [Then(@"I can see expected page ""(.*)"" in a new tab")]
-        public void ThenICanSeeExpectedPageInNewTab(string pageTitle)
+        [Then(@"I can see expected page '(.+)' in a new tab")]
+        public void ExpectedPageInNewTabIsVisible(string pageTitle)
         {
             Browser.SwitchToWindowHandle(SeleniumExecutor.Driver.WindowHandles.Count - 1);
             try
@@ -32,5 +32,12 @@
                 Browser.ResizeToFullScreen();
             }
         }
+
+        [Then(@"I can see page with header '(.+)'")]
+        public void PageWithHeaderIsVisible(string pageHeader)
+        {
+            commonPage.PageHeader(pageHeader).IsDisplayedAfterWait().Should().BeTrue();
+        }
+
     }
 }

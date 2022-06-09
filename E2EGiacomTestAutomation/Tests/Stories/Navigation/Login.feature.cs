@@ -85,13 +85,15 @@ namespace E2EGiacomTestAutomation.Tests.Stories.Navigation
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("User log in with valid credentials")]
         [NUnit.Framework.CategoryAttribute("ClearEnv")]
+        [NUnit.Framework.CategoryAttribute("Login")]
         public virtual void UserLogInWithValidCredentials()
         {
             string[] tagsOfScenario = new string[] {
-                    "ClearEnv"};
+                    "ClearEnv",
+                    "Login"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("User log in with valid credentials", null, tagsOfScenario, argumentsOfScenario);
-#line 10
+#line 11
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -114,10 +116,10 @@ this.ScenarioInitialize(scenarioInfo);
 #line 6
 this.FeatureBackground();
 #line hidden
-#line 11
+#line 12
  testRunner.When("I enter valid login credentials", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 12
+#line 13
  testRunner.Then("I see landing page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
