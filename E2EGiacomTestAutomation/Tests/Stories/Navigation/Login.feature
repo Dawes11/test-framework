@@ -10,5 +10,5 @@ Background:
 @Login
 Scenario: User log in with valid credentials
 	When I enter valid login credentials
-	Then I see landing page
+	Then I see main page
 	

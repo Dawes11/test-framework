@@ -11,9 +11,14 @@ namespace E2EGiacomTestAutomation.Pages.MainPage
 
     public partial class MainPage : CommonPage
     {
-                public void LogOut()
-                {
-                    this.LogoutButton.ClickWithWait();
-                }
+        public void LogOut()
+        {
+            LogoutButton.ClickWithWait();
+        }
+
+        public void ChallengeDom()
+        {
+            ChallengingDom.ClickWithWait();
+        }
     }
 }

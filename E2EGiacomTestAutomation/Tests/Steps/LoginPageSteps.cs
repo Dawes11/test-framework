@@ -32,20 +32,20 @@
             this.loginPage.Login(TestDataGenerator.GetTestData(Constants.Admin));
         }
 
-        [Then(@"I see landing page")]
-        public void LandingPageIsVisible()
+        [Then(@"I see main page")]
+        public void MainPageIsVisible()
         {
             this.loginPage.PageHeader("Task to be automated").IsDisplayedAfterWait().Should().BeTrue();
         }
 
-        [Given(@"I am on landing page after logging in")]
-        public void LandingPageIsVisibleAfterLoggingIn()
+        [Given(@"I am on main page after logging in")]
+        public void MainPageIsVisibleAfterLoggingIn()
         {
             EnterValidLoginCredentials();
-            LandingPageIsVisible();
+            MainPageIsVisible();
         }
 
-        [When(@"I try to get to Main page without login")]
+        [When(@"I try to get to main page without login")]
         public void TryToGetToMainPageWithoutLogin()
         {
             Browser.GoTo(Pages.MainPage);         
@@ -60,6 +60,12 @@
             var uiErrorText = loginPage.ErrorMessage.Text();
             //check correct error message, there is escaping and 'x' at the end -> Contains not Equals, we need to know the message specified is visible
             uiErrorText.Should().Contain(errorMessage, $"Expected {errorMessage}, but shown {uiErrorText}.");
+        }
+
+        [When(@"I login with '(.+)' username and '(.+)' password")]
+        public void LoginWithUsernameAndPassword(string username, string password)
+        {
+            loginPage.Login(username, password);
         }
 
     }

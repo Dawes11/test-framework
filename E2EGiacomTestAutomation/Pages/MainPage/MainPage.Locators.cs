@@ -13,5 +13,7 @@ namespace E2EGiacomTestAutomation.Pages.MainPage
     public partial class MainPage : CommonPage
     {
         public By LogoutButton => By.LinkText("Logout");
+
+        public By ChallengingDom => By.LinkText("Challenging DOM");
     }
 }

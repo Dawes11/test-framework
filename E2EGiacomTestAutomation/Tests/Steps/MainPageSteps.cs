@@ -18,5 +18,13 @@ namespace E2EGiacomTestAutomation.Tests.Steps
         {
             this.mainPage.LogOut();
         }
+
+        //more items can be added to regex
+        [When(@"I click on link '(Challenging DOM)'")]
+        public void ClickOnLink(string link)
+        {
+            mainPage.ChallengeDom();
+        }
+
     }
 }
