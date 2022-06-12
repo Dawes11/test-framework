@@ -62,7 +62,7 @@
             uiErrorText.Should().Contain(errorMessage, $"Expected {errorMessage}, but shown {uiErrorText}.");
         }
 
-        [When(@"I login with '(.+)' username and '(.+)' password")]
+        [When(@"I login with '(.*)' username and '(.*)' password")]
         public void LoginWithUsernameAndPassword(string username, string password)
         {
             loginPage.Login(username, password);

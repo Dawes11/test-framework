@@ -16,7 +16,6 @@ Scenario: User log out paths
 	Then I can see error message with text 'You must login to view the secure area!'
 		And I can see page with header 'Login Page'
 	#Combinations of wrong username/password
-	#Could be used scenarion outline with examples, but this would also run the first part of this scenario (not necessary)
 	When I login with 'wrong' username and 'bluebird' password
 	Then I can see error message with text 'Your username is invalid!'
 		And I can see page with header 'Login Page'
@@ -32,6 +31,26 @@ Scenario: User log out paths
 	When I login with ' ' username and ' ' password
 	Then I can see error message with text 'Your username is invalid!'
 		And I can see page with header 'Login Page'
+
+@Logout
+Scenario Outline: User log out paths with Outline
+	When I log out
+	Then I can see page with header 'Login Page'
+	#I cannot reach landing page without login -> three steps (action and verifications of message nad page)
+	When I try to get to main page without login
+	Then I can see error message with text 'You must login to view the secure area!'
+		And I can see page with header 'Login Page'
+	When I login with '<username>' username and '<password>' password
+	Then I can see error message with text '<result>'
+		And I can see page with header 'Login Page'
+
+Examples: 
+	| username | password | result                    |
+	| wrong    | bluebird | Your username is invalid! |
+	| admin    | wrong    | Your password is invalid! |
+	|          | bluebird | Your username is invalid! |
+	| admin    |          | Your password is invalid! |
+	|          |          | Your username is invalid! |
 
 
 @DOM
