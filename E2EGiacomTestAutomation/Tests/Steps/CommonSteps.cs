@@ -14,7 +14,7 @@
         [Then(@"I can see expected page '(.+)'")]
         public void ExpectedPageIsVisible(string pageTitle)
         {
-            this.commonPage.PageTitle(pageTitle).IsDisplayedAfterWait().Should().BeTrue();
+            commonPage.PageTitle(pageTitle).IsDisplayedAfterWait().Should().BeTrue();
         }
 
         [Then(@"I can see expected page '(.+)' in a new tab")]
@@ -23,7 +23,7 @@
             Browser.SwitchToWindowHandle(SeleniumExecutor.Driver.WindowHandles.Count - 1);
             try
             {
-                this.commonPage.PageHeader(pageTitle).IsDisplayedAfterWait().Should().BeTrue();
+                commonPage.PageHeader(pageTitle).IsDisplayedAfterWait().Should().BeTrue();
             }
             finally
             {

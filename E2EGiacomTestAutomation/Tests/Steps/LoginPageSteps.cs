@@ -29,13 +29,13 @@
         [When(@"I enter valid login credentials")]
         public void EnterValidLoginCredentials()
         {
-            this.loginPage.Login(TestDataGenerator.GetTestData(Constants.Admin));
+            loginPage.Login(TestDataGenerator.GetTestData(Constants.Admin));
         }
 
         [Then(@"I see main page")]
         public void MainPageIsVisible()
         {
-            this.loginPage.PageHeader("Task to be automated").IsDisplayedAfterWait().Should().BeTrue();
+            loginPage.PageHeader("Task to be automated").IsDisplayedAfterWait().Should().BeTrue();
         }
 
         [Given(@"I am on main page after logging in")]
