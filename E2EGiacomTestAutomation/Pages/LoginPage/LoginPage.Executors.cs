@@ -19,6 +19,13 @@
             this.ClickLoginButton();
         }
 
+        public void Login(string username, string password)
+        {
+            EnterUsername(username);
+            EnterPassword(password);
+            ClickLoginButton();
+        }
+
         public void EnterUsername(string email)
         {
             this.UsernameInput.SendKeys(email);
