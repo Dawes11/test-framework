@@ -133,49 +133,49 @@ this.FeatureBackground();
 #line 17
   testRunner.And("I can see page with header \'Login Page\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 20
+#line 19
  testRunner.When("I login with \'wrong\' username and \'bluebird\' password", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 21
+#line 20
  testRunner.Then("I can see error message with text \'Your username is invalid!\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 21
+  testRunner.And("I can see page with header \'Login Page\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 22
-  testRunner.And("I can see page with header \'Login Page\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 23
  testRunner.When("I login with \'admin\' username and \'wrong\' password", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 24
+#line 23
  testRunner.Then("I can see error message with text \'Your password is invalid!\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 24
+  testRunner.And("I can see page with header \'Login Page\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 25
-  testRunner.And("I can see page with header \'Login Page\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 26
  testRunner.When("I login with \' \' username and \'bluebird\' password", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 27
+#line 26
  testRunner.Then("I can see error message with text \'Your username is invalid!\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 27
+  testRunner.And("I can see page with header \'Login Page\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 28
-  testRunner.And("I can see page with header \'Login Page\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 29
  testRunner.When("I login with \'admin\' username and \' \' password", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 30
+#line 29
  testRunner.Then("I can see error message with text \'Your password is invalid!\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 31
+#line 30
   testRunner.And("I can see page with header \'Login Page\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 32
+#line 31
  testRunner.When("I login with \' \' username and \' \' password", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 33
+#line 32
  testRunner.Then("I can see error message with text \'Your username is invalid!\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 34
+#line 33
   testRunner.And("I can see page with header \'Login Page\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
@@ -183,15 +183,28 @@ this.FeatureBackground();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Challenging DOM")]
-        [NUnit.Framework.CategoryAttribute("DOM")]
-        public virtual void ChallengingDOM()
+        [NUnit.Framework.DescriptionAttribute("User log out paths with Outline")]
+        [NUnit.Framework.CategoryAttribute("Logout")]
+        [NUnit.Framework.TestCaseAttribute("wrong", "bluebird", "Your username is invalid!", null)]
+        [NUnit.Framework.TestCaseAttribute("admin", "wrong", "Your password is invalid!", null)]
+        [NUnit.Framework.TestCaseAttribute("", "bluebird", "Your username is invalid!", null)]
+        [NUnit.Framework.TestCaseAttribute("admin", "", "Your password is invalid!", null)]
+        [NUnit.Framework.TestCaseAttribute("", "", "Your username is invalid!", null)]
+        public virtual void UserLogOutPathsWithOutline(string username, string password, string result, string[] exampleTags)
         {
-            string[] tagsOfScenario = new string[] {
-                    "DOM"};
+            string[] @__tags = new string[] {
+                    "Logout"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            string[] tagsOfScenario = @__tags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Challenging DOM", null, tagsOfScenario, argumentsOfScenario);
-#line 38
+            argumentsOfScenario.Add("username", username);
+            argumentsOfScenario.Add("password", password);
+            argumentsOfScenario.Add("result", result);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("User log out paths with Outline", null, tagsOfScenario, argumentsOfScenario);
+#line 36
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -214,10 +227,70 @@ this.ScenarioInitialize(scenarioInfo);
 #line 6
 this.FeatureBackground();
 #line hidden
-#line 39
- testRunner.When("I click on link \'Challenging DOM\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 37
+ testRunner.When("I log out", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 38
+ testRunner.Then("I can see page with header \'Login Page\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 40
+ testRunner.When("I try to get to main page without login", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 41
+ testRunner.Then("I can see error message with text \'You must login to view the secure area!\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 42
+  testRunner.And("I can see page with header \'Login Page\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 43
+ testRunner.When(string.Format("I login with \'{0}\' username and \'{1}\' password", username, password), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 44
+ testRunner.Then(string.Format("I can see error message with text \'{0}\'", result), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 45
+  testRunner.And("I can see page with header \'Login Page\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Challenging DOM")]
+        [NUnit.Framework.CategoryAttribute("DOM")]
+        public virtual void ChallengingDOM()
+        {
+            string[] tagsOfScenario = new string[] {
+                    "DOM"};
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Challenging DOM", null, tagsOfScenario, argumentsOfScenario);
+#line 57
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            bool isScenarioIgnored = default(bool);
+            bool isFeatureIgnored = default(bool);
+            if ((tagsOfScenario != null))
+            {
+                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((this._featureTags != null))
+            {
+                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((isScenarioIgnored || isFeatureIgnored))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 6
+this.FeatureBackground();
+#line hidden
+#line 58
+ testRunner.When("I click on link \'Challenging DOM\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 59
  testRunner.Then("I can see page with header \'Challenging DOM\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
                 TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
@@ -236,7 +309,7 @@ this.FeatureBackground();
                             "Amet",
                             "8",
                             "Consequuntur7"});
-#line 41
+#line 60
   testRunner.And("I can see correct values in rows", ((string)(null)), table1, "And ");
 #line hidden
             }
