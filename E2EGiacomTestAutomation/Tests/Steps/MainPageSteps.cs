@@ -11,7 +11,7 @@ namespace E2EGiacomTestAutomation.Tests.Steps
         [When(@"I log out")]
         public void LogOut()
         {
-            this.mainPage.LogOut();
+            mainPage.LogOut();
         }
 
         //more items can be added to regex
