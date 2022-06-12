@@ -116,12 +116,15 @@
     <Compile Include="Models\Objects\ContactFormModel.cs" />
     <Compile Include="Pages\CommonPage\CommonPage.Executors.cs" />
     <Compile Include="Pages\CommonPage\CommonPage.Locators.cs" />
+    <Compile Include="Pages\DomPage\DomPage.Executors.cs" />
+    <Compile Include="Pages\DomPage\DomPage.Locators.cs" />
     <Compile Include="Pages\LoginPage\LoginPage.Executors.cs" />
     <Compile Include="Pages\LoginPage\LoginPage.Locators.cs" />
     <Compile Include="Pages\MainPage\MainPage.Executors.cs" />
     <Compile Include="Pages\MainPage\MainPage.Locators.cs" />
     <Compile Include="Tests\Hooks\SpecflowHooks.cs" />
     <Compile Include="Tests\Steps\CommonSteps.cs" />
+    <Compile Include="Tests\Steps\DomSteps.cs" />
     <Compile Include="Tests\Steps\LoginPageSteps.cs" />
     <Compile Include="Tests\Steps\MainPageSteps.cs" />
     <Compile Include="Utilities\Enums\Pages.cs" />
