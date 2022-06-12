@@ -1,14 +1,8 @@
 ﻿namespace E2EGiacomTestAutomation.Pages.LoginPage
 {
-    using System;
-    using OpenQA.Selenium;
-    using E2EGiacomTestAutomation.Utilities;
     using Utilities.Extensions;
     using PGSWebsite.Configuration.TestDataSection;
     using Pages.CommonPage;
-    using FluentAssertions;
-    using Utilities.Helpers.TestDataGenerator;
-    using Utilities.Enums;
 
     public partial class LoginPage : CommonPage
     {
@@ -17,6 +11,13 @@
             this.EnterUsername(user.Username);
             this.EnterPassword(user.Password);
             this.ClickLoginButton();
+        }
+
+        public void Login(string username, string password)
+        {
+            EnterUsername(username);
+            EnterPassword(password);
+            ClickLoginButton();
         }
 
         public void EnterUsername(string email)
@@ -33,11 +34,5 @@
         {
             this.LoginButton.ClickWithWait();
         }
-
-//        public void LogOut()
-//        {
-//            this.UsernameButton.ClickWithWait();
-//            this.LogoutButton.ClickWithWait();
-//        }
     }
 }

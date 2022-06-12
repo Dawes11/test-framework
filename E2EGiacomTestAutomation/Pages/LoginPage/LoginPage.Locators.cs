@@ -10,6 +10,7 @@
 
         public By LoginButton => By.XPath("//button[contains(@class, 'radius')]");
 
-        public By LogoutButton => By.LinkText("Logout");
+        public By ErrorMessage => By.XPath("//div[contains(@class,'flash error')]");
+        
     }
 }
