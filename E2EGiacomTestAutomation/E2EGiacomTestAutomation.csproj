@@ -124,7 +124,7 @@
     <Compile Include="Pages\MainPage\MainPage.Locators.cs" />
     <Compile Include="Tests\Hooks\SpecflowHooks.cs" />
     <Compile Include="Tests\Steps\CommonSteps.cs" />
-    <Compile Include="Tests\Steps\DomSteps.cs" />
+    <Compile Include="Tests\Steps\DomPageSteps.cs" />
     <Compile Include="Tests\Steps\LoginPageSteps.cs" />
     <Compile Include="Tests\Steps\MainPageSteps.cs" />
     <Compile Include="Utilities\Enums\Pages.cs" />
