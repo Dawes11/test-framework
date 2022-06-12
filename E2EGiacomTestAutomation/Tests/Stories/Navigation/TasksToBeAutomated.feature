@@ -34,6 +34,7 @@ Scenario: User log out paths
 
 @Logout
 Scenario Outline: User log out paths with Outline
+	#Same as User log out paths, but used Scenario Outline -> 5 examples = 5 scenarios
 	When I log out
 	Then I can see page with header 'Login Page'
 	#I cannot reach landing page without login -> three steps (action and verifications of message nad page)
