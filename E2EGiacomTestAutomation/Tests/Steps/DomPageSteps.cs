@@ -1,21 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using TechTalk.SpecFlow;
-using E2EGiacomTestAutomation.Pages.DomPage;
+﻿using E2EGiacomTestAutomation.Pages.DomPage;
 
 
 namespace E2EGiacomTestAutomation.Tests.Steps
 {
     using FluentAssertions;
-    using Pages.LoginPage;
-    using E2EGiacomTestAutomation.Utilities.Extensions;
     using TechTalk.SpecFlow;
-    using Utilities;
-    using Utilities.Helpers.TestDataGenerator;
-    using Utilities.Enums;
 
     [Binding]
     public class DomPageSteps
@@ -39,6 +28,5 @@ namespace E2EGiacomTestAutomation.Tests.Steps
                 value.Should().BeEquivalentTo(row[2], $"Expected value on coordinates row: {row[1]}, column: {column.ToString()} was: {row[2]}, but found {value}");
             }
         }
-
     }
 }

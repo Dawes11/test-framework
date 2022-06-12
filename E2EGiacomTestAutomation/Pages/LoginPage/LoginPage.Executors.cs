@@ -1,14 +1,8 @@
 ﻿namespace E2EGiacomTestAutomation.Pages.LoginPage
 {
-    using System;
-    using OpenQA.Selenium;
-    using E2EGiacomTestAutomation.Utilities;
     using Utilities.Extensions;
     using PGSWebsite.Configuration.TestDataSection;
     using Pages.CommonPage;
-    using FluentAssertions;
-    using Utilities.Helpers.TestDataGenerator;
-    using Utilities.Enums;
 
     public partial class LoginPage : CommonPage
     {

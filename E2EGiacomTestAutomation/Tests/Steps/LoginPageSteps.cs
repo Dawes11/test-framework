@@ -15,7 +15,7 @@
 
         
         [When(@"I go to '(.+)' page")]
-        public void IgoToSpecificPage(Pages page)
+        public void GoToSpecificPage(Pages page)
         {
             Browser.GoTo(page);
         }
@@ -67,6 +67,5 @@
         {
             loginPage.Login(username, password);
         }
-
     }
 }
