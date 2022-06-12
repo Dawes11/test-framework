@@ -9,7 +9,7 @@ using TechTalk.SpecFlow;
 namespace E2EGiacomTestAutomation.Tests.Steps
 {
     [Binding]
-    class MainPageSteps
+    public class MainPageSteps
     {
         private readonly MainPage mainPage = new MainPage();
 
